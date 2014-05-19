@@ -3,10 +3,12 @@ package main
 import (
 	"github.com/fabioxgn/go-bot"
 	_ "github.com/fabioxgn/go-bot/commands/catfacts"
+	_ "github.com/fabioxgn/go-bot/commands/chucknorris"	
 	_ "github.com/fabioxgn/go-bot/commands/cotacao"
 	_ "github.com/fabioxgn/go-bot/commands/example"
 	_ "github.com/fabioxgn/go-bot/commands/gif"
 	_ "github.com/fabioxgn/go-bot/commands/godoc"
+	_ "github.com/fabioxgn/go-bot/commands/jira"	
 	_ "github.com/fabioxgn/go-bot/commands/megasena"
 	"log"
 	"os"

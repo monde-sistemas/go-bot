@@ -7,14 +7,17 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"os"
 )
 
 var (
-	URL, token, canal, mensagem string
+	canal, mensagem string
+	slackURL        = os.Getenv("SLACKBOT_URL")
+	token           = os.Getenv("SLACKBOT_TOKEN")
 )
 
 func buildURL() *url.URL {
-	u, err := url.Parse(URL)
+	u, err := url.Parse(slackURL)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -46,13 +49,12 @@ func main() {
 }
 
 func parseFlags() {
-	flag.StringVar(&URL, "url", "https://cadena-monde.slack.com/services/hooks/slackbot", "URL do serviço do slackbot")
-	flag.StringVar(&token, "token", "", "Slack token")
-	flag.StringVar(&canal, "canal", "", "Canal, exemplo: #random")
+	flag.StringVar(&canal, "canal", "", "Canal. Ex: #random")
 	flag.StringVar(&mensagem, "mensagem", "", "Mensagem para enviar ao canal")
 	flag.Parse()
 
-	if mensagem == "" {
-		log.Fatal("Informe a mensagem")
+	if canal == "" || mensagem == "" {
+		flag.Usage()
+		os.Exit(1)
 	}
 }

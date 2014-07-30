@@ -39,6 +39,7 @@ func productionConfig() *bot.Config {
 		Nick:     os.Getenv("IRC_NICK"),
 		Password: os.Getenv("IRC_PASSWORD"),
 		UseTLS:   true,
+		TLSServerName: os.Getenv("IRC_TLSServerName"),
 		Debug:    os.Getenv("DEBUG") != "",
 	}
 }

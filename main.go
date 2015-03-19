@@ -1,6 +1,10 @@
 package main
 
 import (
+	"log"
+	"os"
+	"strings"
+
 	"github.com/fabioxgn/go-bot"
 	_ "github.com/fabioxgn/go-bot/commands/catfacts"
 	_ "github.com/fabioxgn/go-bot/commands/catgif"
@@ -11,9 +15,7 @@ import (
 	_ "github.com/fabioxgn/go-bot/commands/godoc"
 	_ "github.com/fabioxgn/go-bot/commands/jira"
 	_ "github.com/fabioxgn/go-bot/commands/megasena"
-	"log"
-	"os"
-	"strings"
+	_ "github.com/fabioxgn/go-bot/commands/puppet"
 )
 
 func main() {

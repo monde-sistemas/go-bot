@@ -16,6 +16,7 @@ import (
 	_ "github.com/fabioxgn/go-bot/commands/jira"
 	_ "github.com/fabioxgn/go-bot/commands/megasena"
 	_ "github.com/fabioxgn/go-bot/commands/puppet"
+	_ "github.com/fabioxgn/go-bot/commands/dilma"
 )
 
 func main() {

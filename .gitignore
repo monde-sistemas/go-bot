@@ -22,3 +22,6 @@ _testmain.go
 *.exe
 *.test
 go-bot
+
+# vim swap files
+*.swp

@@ -1,0 +1,23 @@
+{
+	"ImportPath": "github.com/monde-sistemas/go-bot",
+	"GoVersion": "go1.5",
+	"Deps": [
+		{
+			"ImportPath": "github.com/fabioxgn/go-bot",
+			"Rev": "4936440526c29f73a11ffc896092e6c9498f3df1"
+		},
+		{
+			"ImportPath": "github.com/nlopes/slack",
+			"Comment": "v0.0.1-55-g32464d1",
+			"Rev": "32464d1ddae5f008cc7f1bf9ca677b275a164ae6"
+		},
+		{
+			"ImportPath": "github.com/thoj/go-ircevent",
+			"Rev": "172717c0c58fe0f0facf7e36f637ab0c436a1ab7"
+		},
+		{
+			"ImportPath": "golang.org/x/net/websocket",
+			"Rev": "7654728e381988afd88e58cabfd6363a5ea91810"
+		}
+	]
+}

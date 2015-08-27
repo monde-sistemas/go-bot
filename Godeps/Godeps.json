@@ -7,7 +7,7 @@
 	"Deps": [
 		{
 			"ImportPath": "github.com/fabioxgn/go-bot",
-			"Rev": "4936440526c29f73a11ffc896092e6c9498f3df1"
+			"Rev": "d47b0f7943a1613ea830dfcd0bc35e12ee05a74b"
 		},
 		{
 			"ImportPath": "github.com/nlopes/slack",

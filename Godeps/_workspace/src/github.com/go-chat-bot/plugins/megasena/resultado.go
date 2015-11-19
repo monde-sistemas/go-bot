@@ -2,7 +2,7 @@ package megasena
 
 import (
 	"fmt"
-	"github.com/go-chat-bot/plugins/web"
+	"github.com/monde-sistemas/go-bot/Godeps/_workspace/src/github.com/go-chat-bot/plugins/web"
 )
 
 var (

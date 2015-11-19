@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-chat-bot/bot"
+	"github.com/monde-sistemas/go-bot/Godeps/_workspace/src/github.com/go-chat-bot/bot"
 )
 
 const (

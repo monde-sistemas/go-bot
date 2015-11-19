@@ -5,8 +5,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/go-chat-bot/bot"
-	ircevent "github.com/thoj/go-ircevent"
+	"github.com/monde-sistemas/go-bot/Godeps/_workspace/src/github.com/go-chat-bot/bot"
+	ircevent "github.com/monde-sistemas/go-bot/Godeps/_workspace/src/github.com/thoj/go-ircevent"
 )
 
 // Config must contain the necessary data to connect to an IRC server

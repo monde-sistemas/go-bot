@@ -80,6 +80,15 @@
 			"Rev": "32464d1ddae5f008cc7f1bf9ca677b275a164ae6"
 		},
 		{
+			"ImportPath": "github.com/robfig/cron",
+			"Comment": "v1-2-g67823cd",
+			"Rev": "67823cd24dece1b04cced3a0a0b3ca2bc84d875e"
+		},
+		{
+			"ImportPath": "github.com/thoj/go-ircevent",
+			"Rev": "172717c0c58fe0f0facf7e36f637ab0c436a1ab7"
+		},
+		{
 			"ImportPath": "golang.org/x/net/websocket",
 			"Rev": "7654728e381988afd88e58cabfd6363a5ea91810"
 		}

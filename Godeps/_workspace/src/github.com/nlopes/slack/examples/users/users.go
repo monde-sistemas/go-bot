@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/nlopes/slack"
+	"github.com/monde-sistemas/go-bot/Godeps/_workspace/src/github.com/nlopes/slack"
 )
 
 func main() {

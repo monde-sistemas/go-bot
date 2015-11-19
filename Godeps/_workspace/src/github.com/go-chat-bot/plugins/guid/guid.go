@@ -3,8 +3,8 @@ package guid
 import (
 	"strings"
 
-	uuid "github.com/beevik/guid"
-	"github.com/go-chat-bot/bot"
+	uuid "github.com/monde-sistemas/go-bot/Godeps/_workspace/src/github.com/beevik/guid"
+	"github.com/monde-sistemas/go-bot/Godeps/_workspace/src/github.com/go-chat-bot/bot"
 )
 
 const (

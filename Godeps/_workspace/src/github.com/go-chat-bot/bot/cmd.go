@@ -4,13 +4,14 @@ import (
 	"fmt"
 	"log"
 	"sync"
+	"github.com/robfig/cron"
 )
 
 // Cmd holds the parsed user's input for easier handling of commands
 type Cmd struct {
 	Raw     string   // Raw is full string passed to the command
 	Channel string   // Channel where the command was called
-	Nick    string   // User who sent the message
+	User	*User    // User who sent the message
 	Message string   // Full string without the prefix
 	Command string   // Command is the first argument passed to the bot
 	RawArgs string   // Raw arguments after the command
@@ -19,9 +20,21 @@ type Cmd struct {
 
 // PassiveCmd holds the information which will be passed to passive commands when receiving a message
 type PassiveCmd struct {
-	Raw     string // Raw message sent to the channel
-	Channel string // Channel which the message was sent to
-	Nick    string // Nick of the user which sent the message
+	Raw     string	// Raw message sent to the channel
+	Channel string	// Channel which the message was sent to
+	User    *User	// User who sent this message
+}
+
+// PeriodicConfig holds a cron specification for periodically notifying the configured channels
+type PeriodicConfig struct {
+	CronSpec string		// CronSpec that schedules some function
+	Channels []string	// A list of channels to notify
+}
+
+// User holds user id (nick) and real name
+type User struct {
+	Nick		string
+	RealName	string
 }
 
 type customCommand struct {
@@ -34,10 +47,10 @@ type customCommand struct {
 }
 
 type incomingMessage struct {
-	Channel        string
-	Text           string
-	SenderNick     string
-	BotCurrentNick string
+	Channel			string
+	Text			string
+	User			*User
+	BotCurrentNick	string
 }
 
 // CmdResult is the result message of V2 commands
@@ -64,6 +77,7 @@ type activeCmdFuncV2 func(cmd *Cmd) (CmdResult, error)
 var (
 	commands        = make(map[string]*customCommand)
 	passiveCommands = make(map[string]passiveCmdFunc)
+	c = cron.New()
 )
 
 // RegisterCommand adds a new command to the bot.
@@ -103,6 +117,28 @@ func RegisterPassiveCommand(command string, cmdFunc func(cmd *PassiveCmd) (strin
 	passiveCommands[command] = cmdFunc
 }
 
+// RegisterPeriodicCommand adds a command that is run periodically.
+// The command should be registered in the Init() func of your package
+// config: PeriodicConfig which specify CronSpec and a channel list
+// cmdFunc: A no-arg function which gets triggered periodically
+func RegisterPeriodicCommand(config *PeriodicConfig, cmdFunc func() (string, error)) {
+	c.AddFunc(config.CronSpec, func() {
+		message, err := cmdFunc()
+		if err != nil {
+			log.Print("Periodic command failed ", err)
+			return
+		}
+		if message != "" {
+			for _, channel := range(config.Channels) {
+				handlers.Response(channel, message, nil)
+			}
+		}
+	})
+	if len(c.Entries()) == 1 {
+		c.Start()
+	}
+}
+
 func executePassiveCommands(cmd *PassiveCmd) {
 	var wg sync.WaitGroup
 	mutex := &sync.Mutex{}
@@ -120,7 +156,7 @@ func executePassiveCommands(cmd *PassiveCmd) {
 				log.Println(err)
 			} else {
 				mutex.Lock()
-				handlers.Response(cmd.Channel, result, cmd.Nick)
+				handlers.Response(cmd.Channel, result, cmd.User)
 				mutex.Unlock()
 			}
 		}()
@@ -142,7 +178,7 @@ func handleCmd(c *Cmd) {
 		message, err := cmd.CmdFuncV1(c)
 		checkCmdError(err, c)
 		if message != "" {
-			handlers.Response(c.Channel, message, c.Nick)
+			handlers.Response(c.Channel, message, c.User)
 		}
 	case v2:
 		result, err := cmd.CmdFuncV2(c)
@@ -152,7 +188,7 @@ func handleCmd(c *Cmd) {
 		}
 
 		if result.Message != "" {
-			handlers.Response(result.Channel, result.Message, c.Nick)
+			handlers.Response(result.Channel, result.Message, c.User)
 		}
 	}
 }
@@ -161,6 +197,6 @@ func checkCmdError(err error, c *Cmd) {
 	if err != nil {
 		errorMsg := fmt.Sprintf(errorExecutingCommand, c.Command, err.Error())
 		log.Printf(errorMsg)
-		handlers.Response(c.Channel, errorMsg, c.Nick)
+		handlers.Response(c.Channel, errorMsg, c.User)
 	}
 }

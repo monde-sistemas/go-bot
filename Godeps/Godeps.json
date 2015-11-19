@@ -8,71 +8,71 @@
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/bot",
-			"Rev": "06f12bba869fa83008dddf032d036a1ebd8c0b74"
+			"Rev": "85896fb1ac92529db547b8b5bc2ee35f7b533d08"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/catfacts",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/catgif",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/chucknorris",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/cnpj",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/cotacao",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/cpf",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/crypto",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/dilma",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/encoding",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/gif",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/godoc",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/guid",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/megasena",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/puppet",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/treta",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/go-chat-bot/plugins/web",
-			"Rev": "116ae2e22be1eaae0f9554e3ea8ed05fa654fb34"
+			"Rev": "43423ec9caa2ddf2e4943d63ca2d3493372e4704"
 		},
 		{
 			"ImportPath": "github.com/nlopes/slack",

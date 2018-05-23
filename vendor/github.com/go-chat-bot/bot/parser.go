@@ -12,7 +12,7 @@ var (
 	re = regexp.MustCompile("\\s+") // Matches one or more spaces
 )
 
-func parse(s string, channel string, user *User) (*Cmd, error) {
+func parse(s string, channel *ChannelData, user *User) (*Cmd, error) {
 	c := &Cmd{Raw: s}
 	s = strings.TrimSpace(s)
 
@@ -20,7 +20,8 @@ func parse(s string, channel string, user *User) (*Cmd, error) {
 		return nil, nil
 	}
 
-	c.Channel = strings.TrimSpace(channel)
+	c.Channel = strings.TrimSpace(channel.Channel)
+	c.ChannelData = channel
 	c.User = user
 
 	// Trim the prefix and extra spaces
@@ -44,6 +45,10 @@ func parse(s string, channel string, user *User) (*Cmd, error) {
 			return nil, errors.New("Error parsing arguments: " + err.Error())
 		}
 		c.Args = parsedArgs
+	}
+
+	c.MessageData = &Message{
+		Text: c.Message,
 	}
 
 	return c, nil

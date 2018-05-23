@@ -1,6 +1,6 @@
 # go-bot
 
-[![Circle CI](https://circleci.com/gh/go-chat-bot/bot/tree/master.svg?style=svg)](https://circleci.com/gh/go-chat-bot/bot/tree/master) [![GoDoc](https://godoc.org/github.com/go-chat-bot/bot?status.png)](https://godoc.org/github.com/go-chat-bot/bot) [![Coverage Status](https://img.shields.io/coveralls/go-chat-bot/bot.svg)](https://coveralls.io/r/go-chat-bot/bot?branch=master)
+[![Circle CI](https://circleci.com/gh/go-chat-bot/bot/tree/master.svg?style=svg)](https://circleci.com/gh/go-chat-bot/bot/tree/master) [![GoDoc](https://godoc.org/github.com/go-chat-bot/bot?status.png)](https://godoc.org/github.com/go-chat-bot/bot) [![Coverage Status](https://coveralls.io/repos/github/go-chat-bot/bot/badge.svg?branch=master)](https://coveralls.io/github/go-chat-bot/bot?branch=master)
 
 IRC, Slack & Telegram bot written in [Go][go] using [go-ircevent][go-ircevent] for IRC connectivity, [nlopes/slack](https://github.com/nlopes/slack) for Slack and [Syfaro/telegram-bot-api](https://github.com/Syfaro/telegram-bot-api) for Telegram.
 
@@ -72,7 +72,7 @@ package main
 	)
 
 	func main() {
-		irc.Run(&bot.Config{
+		irc.Run(&irc.Config{
 			Server:   os.Getenv("IRC_SERVER"),
 			Channels: strings.Split(os.Getenv("IRC_CHANNELS"), ","),
 			User:     os.Getenv("IRC_USER"),
@@ -113,6 +113,43 @@ import (
 
 func main() {
     telegram.Run(os.Getenv("TELEGRAM_TOKEN"), os.Getenv("DEBUG") != "")
+}
+```
+
+### Rocket.chat
+
+To deploy your go-bot to Rocket.chat, you need to:
+
+* Import the package `github.com/go-chat-bot/bot/rocket`
+* Import the commands you would like to use
+* Call `rocket.Run(config)`
+
+Here is a full example:
+
+```Go
+package main
+
+import (
+	"os"
+
+	"github.com/go-chat-bot/bot/rocket"
+	_ "github.com/go-chat-bot/plugins/godoc"
+	_ "github.com/go-chat-bot/plugins/catfacts"
+	_ "github.com/go-chat-bot/plugins/catgif"
+	_ "github.com/go-chat-bot/plugins/chucknorris"
+)
+
+func main() {
+	config := &rocket.Config{
+		Server:   os.Getenv("ROCKET_SERVER"),
+		Port:     os.Getenv("ROCKET_PORT"),
+		User:     os.Getenv("ROCKET_USER"),
+		Email:    os.Getenv("ROCKET_EMAIL"),
+		Password: os.Getenv("ROCKET_PASSWORD"),
+		UseTLS:   false,
+		Debug:    os.Getenv("DEBUG") != "",
+	}
+	rocket.Run(config)
 }
 ```
 

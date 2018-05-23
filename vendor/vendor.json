@@ -123,6 +123,12 @@
 			"revisionTime": "2017-09-08T17:05:15Z"
 		},
 		{
+			"checksumSHA1": "AxIMe+M5q9yY4q0QLqlA/Qfq3sc=",
+			"path": "github.com/go-redis/redis",
+			"revision": "e3d9f9d1c75d99d2ca97b5a9a4ad2319a01f577b",
+			"revisionTime": "2018-05-21T14:18:30Z"
+		},
+		{
 			"checksumSHA1": "mB5P3/XIC7r4Jc0/K86NA9Jq2CA=",
 			"path": "github.com/gorilla/websocket",
 			"revision": "21ab95fa12b9bdd8fecf5fa3586aad941cc98785",

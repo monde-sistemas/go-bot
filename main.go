@@ -19,6 +19,7 @@ import (
 	_ "github.com/go-chat-bot/plugins/guid"
 	_ "github.com/go-chat-bot/plugins/puppet"
 	_ "github.com/go-chat-bot/plugins/treta"
+	_ "github.com/fernand-o/go-bot-custom-responses-plugin"	
 )
 
 func main() {

@@ -1,0 +1,157 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "PrsRKPjdxQiedNmoSiema5rw7Ys=",
+			"path": "github.com/beevik/guid",
+			"revision": "d0ea8faecee03ccdfb5ab8322d5d9037bb7af438",
+			"revisionTime": "2017-05-04T22:33:18Z"
+		},
+		{
+			"checksumSHA1": "XXvvxzyiDfFb4EIzaPDKxqJmprE=",
+			"path": "github.com/go-chat-bot/bot",
+			"revision": "3cda8d6c8953a59c4a95f5be810755805d36e7ee",
+			"revisionTime": "2018-03-18T12:59:23Z"
+		},
+		{
+			"checksumSHA1": "x3pD+RTqjzNIiB9so2IND2XaxYk=",
+			"path": "github.com/go-chat-bot/bot/slack",
+			"revision": "3cda8d6c8953a59c4a95f5be810755805d36e7ee",
+			"revisionTime": "2018-03-18T12:59:23Z"
+		},
+		{
+			"checksumSHA1": "DZT0/6FLREg6b4vAyN6VHXX19U8=",
+			"path": "github.com/go-chat-bot/plugins-br/cnpj",
+			"revision": "eb41b30907dc280493054e43961fac6892184e3a",
+			"revisionTime": "2017-03-16T12:29:23Z"
+		},
+		{
+			"checksumSHA1": "bMpppLCFrbxeoTSe5j1FgchbL1g=",
+			"path": "github.com/go-chat-bot/plugins-br/cotacao",
+			"revision": "eb41b30907dc280493054e43961fac6892184e3a",
+			"revisionTime": "2017-03-16T12:29:23Z"
+		},
+		{
+			"checksumSHA1": "kt9g1uPyY8L4HpE56dRTnzqNTvQ=",
+			"path": "github.com/go-chat-bot/plugins-br/cpf",
+			"revision": "eb41b30907dc280493054e43961fac6892184e3a",
+			"revisionTime": "2017-03-16T12:29:23Z"
+		},
+		{
+			"checksumSHA1": "kTQ0Rju8tRW3pQT+pz+mL5nnBlQ=",
+			"path": "github.com/go-chat-bot/plugins-br/dilma",
+			"revision": "eb41b30907dc280493054e43961fac6892184e3a",
+			"revisionTime": "2017-03-16T12:29:23Z"
+		},
+		{
+			"checksumSHA1": "dq+fPISiZxFgGIEHRSXQ5/e3IWs=",
+			"path": "github.com/go-chat-bot/plugins-br/megasena",
+			"revision": "eb41b30907dc280493054e43961fac6892184e3a",
+			"revisionTime": "2017-03-16T12:29:23Z"
+		},
+		{
+			"checksumSHA1": "PnTGq1xw1vgzgPOIsbWnsgyw/s4=",
+			"path": "github.com/go-chat-bot/plugins/catfacts",
+			"revision": "5940ea443416584b78b8a1e4aa66d912b547c25b",
+			"revisionTime": "2017-09-08T17:05:15Z"
+		},
+		{
+			"checksumSHA1": "lwWsD0hB2SK+M7Q71I93c54Q+CM=",
+			"path": "github.com/go-chat-bot/plugins/catgif",
+			"revision": "5940ea443416584b78b8a1e4aa66d912b547c25b",
+			"revisionTime": "2017-09-08T17:05:15Z"
+		},
+		{
+			"checksumSHA1": "BEBZMtZ87fG0KlVf/6wcgBB1wT8=",
+			"path": "github.com/go-chat-bot/plugins/chucknorris",
+			"revision": "5940ea443416584b78b8a1e4aa66d912b547c25b",
+			"revisionTime": "2017-09-08T17:05:15Z"
+		},
+		{
+			"checksumSHA1": "5tCWHrxeziQMGc2mXCcyf69+9JQ=",
+			"path": "github.com/go-chat-bot/plugins/crypto",
+			"revision": "5940ea443416584b78b8a1e4aa66d912b547c25b",
+			"revisionTime": "2017-09-08T17:05:15Z"
+		},
+		{
+			"checksumSHA1": "kKEa68SnpL0+J7gF203wQ3fIpxk=",
+			"path": "github.com/go-chat-bot/plugins/encoding",
+			"revision": "5940ea443416584b78b8a1e4aa66d912b547c25b",
+			"revisionTime": "2017-09-08T17:05:15Z"
+		},
+		{
+			"checksumSHA1": "ZC4XlG62XTq34IDUMASY5+/otCs=",
+			"path": "github.com/go-chat-bot/plugins/gif",
+			"revision": "5940ea443416584b78b8a1e4aa66d912b547c25b",
+			"revisionTime": "2017-09-08T17:05:15Z"
+		},
+		{
+			"checksumSHA1": "XDsNpRgDYyyOgk7x95i+XHW6qrY=",
+			"path": "github.com/go-chat-bot/plugins/godoc",
+			"revision": "5940ea443416584b78b8a1e4aa66d912b547c25b",
+			"revisionTime": "2017-09-08T17:05:15Z"
+		},
+		{
+			"checksumSHA1": "zNH/FuJMFHNcMNdTxyWb6Gk50Qo=",
+			"path": "github.com/go-chat-bot/plugins/guid",
+			"revision": "5940ea443416584b78b8a1e4aa66d912b547c25b",
+			"revisionTime": "2017-09-08T17:05:15Z"
+		},
+		{
+			"checksumSHA1": "+sbto9k/iVSpIxAe2tqOzQcgKgo=",
+			"path": "github.com/go-chat-bot/plugins/puppet",
+			"revision": "5940ea443416584b78b8a1e4aa66d912b547c25b",
+			"revisionTime": "2017-09-08T17:05:15Z"
+		},
+		{
+			"checksumSHA1": "Hjf0tDi1MEuuCphXWjQn8kBjvDI=",
+			"path": "github.com/go-chat-bot/plugins/treta",
+			"revision": "5940ea443416584b78b8a1e4aa66d912b547c25b",
+			"revisionTime": "2017-09-08T17:05:15Z"
+		},
+		{
+			"checksumSHA1": "/TNZOHX0gJWJ4wJhzxdnrF4aKWc=",
+			"path": "github.com/go-chat-bot/plugins/web",
+			"revision": "5940ea443416584b78b8a1e4aa66d912b547c25b",
+			"revisionTime": "2017-09-08T17:05:15Z"
+		},
+		{
+			"checksumSHA1": "mB5P3/XIC7r4Jc0/K86NA9Jq2CA=",
+			"path": "github.com/gorilla/websocket",
+			"revision": "21ab95fa12b9bdd8fecf5fa3586aad941cc98785",
+			"revisionTime": "2018-04-20T17:16:12Z"
+		},
+		{
+			"checksumSHA1": "XOqpVEDMaQ4kp8HY/+KnJZRE4So=",
+			"path": "github.com/martinusso/go-docs/cnpj",
+			"revision": "81905d575a58d3c6c690c32da2e430411c5de145",
+			"revisionTime": "2016-12-15T16:37:20Z"
+		},
+		{
+			"checksumSHA1": "gfLTz3sd4eVJX1dbN/h3tVES8m4=",
+			"path": "github.com/martinusso/go-docs/cpf",
+			"revision": "81905d575a58d3c6c690c32da2e430411c5de145",
+			"revisionTime": "2016-12-15T16:37:20Z"
+		},
+		{
+			"checksumSHA1": "F4vVtBazK4fxatFQ0xvJrKLpXxo=",
+			"path": "github.com/mattn/go-shellwords",
+			"revision": "39dbbfa24bbc39559b61cae9b20b0e8db0e55525",
+			"revisionTime": "2018-02-01T00:47:52Z"
+		},
+		{
+			"checksumSHA1": "UCKAfY4hDbvlLiJtTeG/J2lNm2I=",
+			"path": "github.com/nlopes/slack",
+			"revision": "d8ac454a777b2593d818e3e634bb99245962c42b",
+			"revisionTime": "2018-05-09T17:20:14Z"
+		},
+		{
+			"checksumSHA1": "xGlhb4NZjBVCNSbb7GIMvhn6mQg=",
+			"path": "github.com/robfig/cron",
+			"revision": "b41be1df696709bb6395fe435af20370037c0b4c",
+			"revisionTime": "2018-05-05T20:34:41Z"
+		}
+	],
+	"rootPath": "github.com/monde-sistemas/go-bot"
+}

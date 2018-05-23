@@ -9,6 +9,12 @@
 			"revisionTime": "2017-05-04T22:33:18Z"
 		},
 		{
+			"checksumSHA1": "B2MeXSzXfvm3aOKoM28HTVDdOKQ=",
+			"path": "github.com/fernand-o/go-bot-custom-responses-plugin",
+			"revision": "3b34d312c55c0092c36181f2b410c0731efbbdc9",
+			"revisionTime": "2018-05-21T00:14:12Z"
+		},
+		{
 			"checksumSHA1": "XXvvxzyiDfFb4EIzaPDKxqJmprE=",
 			"path": "github.com/go-chat-bot/bot",
 			"revision": "3cda8d6c8953a59c4a95f5be810755805d36e7ee",

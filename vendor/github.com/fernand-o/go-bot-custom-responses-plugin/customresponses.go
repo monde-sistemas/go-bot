@@ -12,12 +12,6 @@ import (
 	"github.com/go-redis/redis"
 )
 
-const (
-	argumentsExample     = "Usage: \n```\n!responses match set \"Is someone there?\" \"Hello\" \n !responses match unset 1 \n !responses match show\n```"
-	argumentsListExample = "Usage: \n```\n !responses list add #mylist \"Some random message\" \n !responses list delete #mylist \"Some random message\" \n !responses list clear #mylist\n```"
-	invalidArguments     = "Please inform the params, ex:"
-)
-
 type Match struct {
 	key      string
 	match    string
@@ -62,50 +56,6 @@ func loadMatches() {
 	}
 }
 
-func matchesKeyFmt(sufix string) string {
-	return "matches:" + sufix
-}
-
-func userMessageSetResponse(match, response string) string {
-	return fmt.Sprintf("Ok! I will send a message with %s when i found any occurences of %s", response, match)
-}
-
-func userMessageUnsetResponse(match string) string {
-	return fmt.Sprintf("Done, i'll not say anything more related to %s", match)
-}
-
-func userMessageNoResposesDefined() string {
-	return fmt.Sprintf("There are no responses defined yet. \n %s", argumentsExample)
-}
-
-func userMessageResponsesDeleted() string {
-	return "All responses were deleted."
-}
-
-func userMessageListMessageAdded(list, message string) string {
-	return fmt.Sprintf("The message `%s` was added to the list `%s`.", message, list)
-}
-
-func userMessageListMessageRemoved(list, message string) string {
-	return fmt.Sprintf("The message `%s` was removed of the list `%s`.", message, list)
-}
-
-func userMessageListDeleted(list string) string {
-	return fmt.Sprintf("The list %s was deleted.", list)
-}
-
-func userMessageNoListsDefined() string {
-	return fmt.Sprintf("There are no lists defined yet. \n %s", argumentsListExample)
-}
-
-func userMessageListInvalidName() string {
-	return "The list name must starts with #"
-}
-
-func userMessageDBErased() string {
-	return "Database erased."
-}
-
 func showOrClearResponses(param string) (msg string) {
 	switch param {
 	case "showall":
@@ -113,7 +63,7 @@ func showOrClearResponses(param string) (msg string) {
 	case "clear":
 		msg = clearResponses()
 	default:
-		msg = argumentsExample
+		msg = argumentsMatchExample
 	}
 	return
 }
@@ -137,13 +87,14 @@ func showResponses() string {
 		return userMessageNoResposesDefined()
 	}
 
-	var results, line []string
+	var results []string
+	var line string
 	for _, k := range Matches {
-		line = []string{k.match, k.response}
-		results = append(results, strings.Join(line, " -> "))
+		line = fmt.Sprintf("[%s] [%s] [%s] [%s]", k.key, k.match, k.response, k.list)
+		results = append(results, line)
 	}
 	sort.Sort(sort.StringSlice(results))
-	return fmt.Sprintf("List of defined responses:\n```\n%s\n```", strings.Join(results, "\n"))
+	return fmt.Sprintf("List of defined responses:\n```\n[key] [match] [response] [list]\n%s\n```", strings.Join(results, "\n"))
 }
 
 func recordCount() int {
@@ -153,7 +104,7 @@ func recordCount() int {
 
 func setResponse(args []string) string {
 	if args[0] != "set" {
-		return argumentsExample
+		return argumentsMatchExample
 	}
 
 	match := args[1]
@@ -179,7 +130,7 @@ func setResponse(args []string) string {
 
 func unsetResponse(param, id string) string {
 	if param != "unset" {
-		return argumentsExample
+		return argumentsMatchExample
 	}
 	key := matchesKeyFmt(id)
 
@@ -207,7 +158,7 @@ func matchCommand(args []string) (msg string) {
 		msg = setResponse(args)
 		loadMatches()
 	default:
-		msg = argumentsExample
+		msg = argumentsMatchExample
 	}
 	return
 }
@@ -227,7 +178,7 @@ func getListMembers(listname string) string {
 	var results = []string{listname}
 	messages, _ := RedisClient.SMembers(listname).Result()
 	for _, m := range messages {
-		results = append(results, " - "+m)
+		results = append(results, fmt.Sprintf("  [%s]", m))
 	}
 	return strings.Join(results, "\n")
 }
@@ -293,7 +244,7 @@ func listCommand(args []string) (msg string) {
 	case 3:
 		msg = addOrRemoveListMessage(args)
 	default:
-		msg = argumentsExample
+		msg = argumentsListExample
 	}
 	return
 }
@@ -301,14 +252,14 @@ func listCommand(args []string) (msg string) {
 func responsesCommand(command *bot.Cmd) (msg string, err error) {
 	paramCount := len(command.Args)
 	if paramCount == 0 {
-		msg = argumentsExample
+		msg = argumentsGeneralExample
 		return
 	}
 
 	operation := command.Args[0]
 
 	if (paramCount < 2) && (operation != "clearall") {
-		msg = argumentsExample
+		msg = argumentsGeneralExample
 		return
 	}
 
@@ -322,7 +273,7 @@ func responsesCommand(command *bot.Cmd) (msg string, err error) {
 	case "clearall":
 		msg = clearAll()
 	default:
-		msg = argumentsExample
+		msg = argumentsGeneralExample
 	}
 	return
 }
@@ -365,6 +316,6 @@ func init() {
 	bot.RegisterCommand(
 		"responses",
 		"Defines a custom response to be sent when a given string is found in a message",
-		argumentsExample,
+		argumentsGeneralExample,
 		responsesCommand)
 }

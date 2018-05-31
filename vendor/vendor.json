@@ -9,22 +9,22 @@
 			"revisionTime": "2017-05-04T22:33:18Z"
 		},
 		{
-			"checksumSHA1": "OfppZSpcXE6nWlfnyjEomybANSs=",
+			"checksumSHA1": "N4p9fXwUCgmmXE1chSOf8bYeySQ=",
 			"path": "github.com/fernand-o/go-bot-custom-responses-plugin",
-			"revision": "50723af1e96028d1f7a7be70e8543c71196f85dc",
-			"revisionTime": "2018-05-30T02:57:08Z"
+			"revision": "f116b725a9a1157122493b93af0fc820f42993b5",
+			"revisionTime": "2018-05-31T01:20:55Z"
 		},
 		{
-			"checksumSHA1": "XXvvxzyiDfFb4EIzaPDKxqJmprE=",
+			"checksumSHA1": "PB7eQ78J0BpZsW+i0eShKpeQOcU=",
 			"path": "github.com/go-chat-bot/bot",
-			"revision": "3cda8d6c8953a59c4a95f5be810755805d36e7ee",
-			"revisionTime": "2018-03-18T12:59:23Z"
+			"revision": "6f6277662d40d5ae3592e3031542e068b1feee15",
+			"revisionTime": "2018-05-30T23:18:44Z"
 		},
 		{
 			"checksumSHA1": "x3pD+RTqjzNIiB9so2IND2XaxYk=",
 			"path": "github.com/go-chat-bot/bot/slack",
-			"revision": "3cda8d6c8953a59c4a95f5be810755805d36e7ee",
-			"revisionTime": "2018-03-18T12:59:23Z"
+			"revision": "6f6277662d40d5ae3592e3031542e068b1feee15",
+			"revisionTime": "2018-05-30T23:18:44Z"
 		},
 		{
 			"checksumSHA1": "DZT0/6FLREg6b4vAyN6VHXX19U8=",
